@@ -27,7 +27,7 @@ config: {
 },
 
 
-// get latest active listings - images currently don't load
+// get latest active listings
 
 getListings: function () {
    $.ajax({
