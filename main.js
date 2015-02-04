@@ -43,6 +43,7 @@ getListings: function () {
 
          $('.container').append('<div class="listing">' +
          '<img src="' + item.Images[0].url_570xN + '">' +
+         '<a href="' + item.url + '" target="_blank">' +
          '<p>' + item.title + '</p>' +
          '<p> $' + item.price + '</p>' +
          '</div>');
