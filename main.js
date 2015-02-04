@@ -31,29 +31,22 @@ config: {
 
 getListings: function () {
    $.ajax({
-     url: page.config.baseUrl + 'listings/active.js?api_key=' + page.config.api_key,
+     url: page.config.baseUrl + 'listings/active.js?&limit=15&includes=Images:1&api_key=' + page.config.api_key,
      type: 'GET',
      dataType: 'JSONP',
      success: function (data) {
-       console.log(page.config.baseUrl + 'listings/active.js?api_key=' + page.config.api_key);
+      console.log(page.config.baseUrl + 'listings/active.js?&limit=15&includes=Images:1&api_key=' + page.config.api_key);
        console.log(data);
 
 
        data.results.forEach(function(item, idx, array) {
 
-         $('.container').append('<p><img src ="' + item.url + '"></p>');
-         $('.container').append('<p>' + item.title + '</p>');
-         $('.container').append('<p> $' + item.price + '</p>');
-
+         $('.container').append('<div class="listing">' +
+         '<img src="' + item.Images[0].url_570xN + '">' +
+         '<p>' + item.title + '</p>' +
+         '<p> $' + item.price + '</p>' +
+         '</div>');
        });
-
-
-//        _.each(data, function(item, index, array) {
-//          _.each(item, function(currentItem, idx, arr) {
-//            $('.container').append('<p>' + currentItem.title + '</p>');
-//            $('.container').append('<img src ="' + currentItem.url + '">');
-//          });
-//        });
 
      },
      error: function (error) {
@@ -61,14 +54,6 @@ getListings: function () {
      }
    });
 }
-
-
-
-
-
-
-
-
 
 
 };

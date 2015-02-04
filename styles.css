@@ -17,15 +17,14 @@ h2 {
   text-align: center;
 }
 
-p {
-  font-size: 1em;
+.listing {
   display: block;
-  line-height: 1.2em;
   width: 60%;
   margin: 0 auto;
-
+  padding-top: 1em;
 }
 
-img {
-  padding-top: 2em;
+.listing p {
+  font-size: 1em;
+  line-height: 1.2em;
 }
